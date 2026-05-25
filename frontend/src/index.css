@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* ===== ROOT THEME ===== */
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #ffffff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.45;
+
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+  }
+}
+
+/* ===== RESET ===== */
+body {
+  margin: 0;
+}
+
+/* 🔥 FIX: REMOVE CENTER ALIGN BREAKING NAVBAR */
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+
+  /* ❌ REMOVED text-align: center */
+  /* text-align: center; */
+
+  border-inline: 1px solid var(--border);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  margin: 32px 0;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* ===== TEXT ===== */
+p {
+  margin: 0;
+}
+
+/* ===== LINKS (IMPORTANT FIX) ===== */
+a {
+  text-decoration: none;   /* 🔥 removes underline */
+  color: inherit;
+}
+
+/* ===== BUTTON ===== */
+button {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 500;
+}
+
+/* ===== INPUT ===== */
+input {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--accent);
+}

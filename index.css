@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-montserrat text-luxury-dark bg-luxury-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-luxury-gold text-luxury-dark px-6 py-3 rounded-lg font-semibold 
+           transition-all duration-300 hover:bg-luxury-gold-light hover:scale-105 
+           focus:outline-none focus:ring-2 focus:ring-luxury-gold focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-luxury-gold text-luxury-gold px-6 py-3 rounded-lg 
+           font-semibold transition-all duration-300 hover:bg-luxury-gold 
+           hover:text-luxury-dark hover:scale-105;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 
+           hover:shadow-2xl hover:-translate-y-2;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
+           focus:ring-2 focus:ring-luxury-gold focus:border-transparent 
+           transition-all duration-300;
+  }
+  
+  .dashboard-card {
+    @apply bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8941e;
+}
