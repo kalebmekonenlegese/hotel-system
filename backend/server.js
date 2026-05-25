@@ -1,11 +1,11 @@
 console.log("🔥 SERVER.JS IS RUNNING");
 
-const dotenv = require("dotenv");
-dotenv.config();
+require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
 
+// ✅ ROUTES
 const roomRoutes = require("./src/routes/roomRoutes");
 const authRoutes = require("./src/routes/authRoutes");
 const reservationRoutes = require("./src/routes/reservationRoutes");
@@ -13,6 +13,7 @@ const dashboardRoutes = require("./src/routes/dashboardRoutes");
 
 const app = express();
 
+// ✅ MIDDLEWARE
 app.use(cors());
 app.use(express.json());
 
@@ -31,8 +32,10 @@ app.use("/api/rooms", roomRoutes);
 app.use("/api/reservations", reservationRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 
-const PORT = 5050;
+// ✅ PORT (IMPORTANT FOR RENDER)
+const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+// ✅ START SERVER
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
