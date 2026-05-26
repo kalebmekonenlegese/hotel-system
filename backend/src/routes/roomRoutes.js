@@ -2,8 +2,7 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../config/database");
 
-const verifyToken = require("../middleware/authMiddleware");
-
+const verifyToken = require("../../middleware/authMiddleware");
 // 🔒 ADMIN CHECK
 const isAdmin = (req, res, next) => {
   if (req.user.role !== "admin") {
