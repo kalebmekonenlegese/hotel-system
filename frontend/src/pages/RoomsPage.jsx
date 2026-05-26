@@ -36,28 +36,17 @@ function RoomsPage() {
               key={room.id}
               className="bg-white shadow-md rounded-lg p-5 border hover:shadow-lg transition"
             >
-              <h3 className="text-lg font-semibold mb-2">
-                Room {room.room_number}
-              </h3>
+<h3 className="text-lg font-semibold mb-2">
+  {room.name}
+</h3>
 
-              <p className="text-gray-600">
-                Type: <span className="font-medium">{room.type}</span>
-              </p>
+<p className="text-gray-600">
+  {room.description}
+</p>
 
-              <p className="text-green-600 font-bold">
-                {room.price} ETB
-              </p>
-
-              <span
-                className={`inline-block mt-2 px-2 py-1 text-sm rounded ${
-                  room.status === "available"
-                    ? "bg-green-100 text-green-700"
-                    : "bg-gray-200 text-gray-600"
-                }`}
-              >
-                {room.status}
-              </span>
-
+<p className="text-green-600 font-bold">
+  {room.price} ETB / night
+</p>
               <button
                 onClick={() => {
                   localStorage.setItem(

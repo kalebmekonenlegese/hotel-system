@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://hotel-system-xrzy.onrender.com/api",
+baseURL: "https://hotel-system-xrzy.onrender.com/api"
 });
 
 // ✅ Attach token automatically
