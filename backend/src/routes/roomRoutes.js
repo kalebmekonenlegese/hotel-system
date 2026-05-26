@@ -17,22 +17,13 @@ const isAdmin = (req, res, next) => {
 //
 router.get("/", async (req, res) => {
   try {
-    const result = await pool.query(`
-      SELECT *
-      FROM rooms
-      ORDER BY id ASC
-    `);
-
+    const result = await pool.query("SELECT * FROM rooms");
     res.json(result.rows);
-
-  } catch (error) {
-    console.error("GET ROOMS ERROR:", error);
-    res.status(500).json({
-      message: "Server error",
-    });
+  } catch (err) {
+    console.error("GET ROOMS ERROR:", err.message); // 👈 important
+    res.status(500).json({ message: "Server error" });
   }
 });
-
 //
 // ✅ GET SINGLE ROOM BY ID (🔥 THIS WAS MISSING)
 //

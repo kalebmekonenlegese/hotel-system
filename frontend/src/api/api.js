@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5050/api",
+  baseURL: "https://hotel-system-xrzy.onrender.com/api",
 });
 
 // ✅ Attach token automatically
@@ -15,9 +15,7 @@ API.interceptors.request.use(
 
     return req;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
 export default API;

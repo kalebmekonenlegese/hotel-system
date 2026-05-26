@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "http://hotel-system-xrzy.onrender.com/api/auth";
 
 /**
  * Handle network and response errors
